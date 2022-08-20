@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import {Header} from "./components/Header"
-import {ContainerApp} from "./styles"
+import { Header } from "./components/Header";
+import { ContainerApp, ContainerContent } from "./styles";
+import { SearchWrapper } from "./components/SearchWrapper/index";
+import { NotProfileBox } from "./components/NotProfileBox/index";
 
 function App() {
   const [dataUser, setDataUser] = useState([]);
@@ -15,7 +17,12 @@ function App() {
 
   return (
     <ContainerApp>
-      <Header/>
+      <Header />
+      <SearchWrapper />
+
+      <ContainerContent>
+        <NotProfileBox />
+      </ContainerContent>
     </ContainerApp>
   );
 }

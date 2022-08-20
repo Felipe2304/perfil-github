@@ -7,6 +7,7 @@ export const HeaderApp = styled.header`
   align-items: center;
   background-color:#161B22;
   padding: 0 5rem;
+  margin-bottom: 4rem;
 `;
 
 export const LogoTitle = styled.div`
