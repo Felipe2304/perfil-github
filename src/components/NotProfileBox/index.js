@@ -1,11 +1,11 @@
 import { NotProfile } from "./notStyles";
 import LogoMascot from "../../assets/mascot.png"
 
-export const NotProfileBox = () => {
+export const NotProfileBox = ({infoTextStrong , infoText}) => {
   return (
     <NotProfile>
       <img src={LogoMascot}></img>
-      <p><strong>OPS, </strong>ocorreu algum erro na Busca, digite novamente!</p>
+      <p><strong>{infoTextStrong}</strong>{infoText}</p>
     </NotProfile>
   )
 };

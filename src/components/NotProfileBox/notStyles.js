@@ -6,6 +6,7 @@ export const NotProfile = styled.div`
   display: flex;
   flex-direction:column ;
   align-items: center;
+  padding: 2rem;
 
   img{
     width: 20rem;

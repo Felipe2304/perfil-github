@@ -16,6 +16,6 @@ export const ContainerContent = styled.section`
   height: calc(100vh - 26rem);
   width: 90%;
   background-color: #161b22;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 10px;
 `;
