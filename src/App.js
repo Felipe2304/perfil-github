@@ -1,29 +1,19 @@
-import { useState } from 'react';
-import './App.css';
+import { useEffect, useState } from "react";
+import "./App.css";
 
 function App() {
+  const [dataUser, setDataUser] = useState([]);
 
-  const [listProfile , setProfile] = useState({});
+  useEffect(() => {
+    const myProfile = fetch("https://api.github.com/users/Felipe2304");
+    myProfile
+      .then((response) => response.json())
+      .then((json) => setDataUser(json));
+  }, []);
 
-  const api = 'https://api.github.com/users/Felipe2304'
-
-  const myProfile = ()=>{
-    const resultApi = fetch(api)
-    resultApi
-    .then(response => response.json())
-    .then(response => getResult(response) )
-    .catch(error => getResult(error))
-  }
-
-  const getResult = (response)=>{
-    console.log(response)
-  }
-
-   myProfile()
-  
   return (
     <div className="container-App">
-     
+      
     </div>
   );
 }
