@@ -2,9 +2,11 @@ import { ContainerCardBox } from "./containerCardStyles";
 import {
   CardProfile,
   CardBio,
-  CardRepo,
+  CardAccessProfile,
   CardInfo,
+  NotBio,
 } from "./containerCardStyles";
+import { AccessGitHubWrapper } from "../GitHubAccessWrapper";
 
 import { IconTitle } from "../shared/IconTitle";
 import location from "../../assets/location.svg";
@@ -12,21 +14,24 @@ import followers from "../../assets/followers.svg";
 import following from "../../assets/following.svg";
 import company from "../../assets/company.svg";
 import repository from "../../assets/repository.svg";
-import linkedin from "../../assets/linkedin.png";
 
 export const ContainerCard = ({ dataUser }) => {
   const objInfo = [
-    { id: "1", icon: `${location}`, infoText: dataUser.location },
+    {
+      id: "1",
+      icon: `${location}`,
+      infoText: dataUser.location ? dataUser.location : "não informado",
+    },
     { id: "2", icon: `${followers}`, infoText: dataUser.followers },
     { id: "3", icon: `${following}`, infoText: dataUser.following },
     {
       id: "4",
       icon: `${company}`,
-      infoText: dataUser.company ? dataUser.company : "não contém",
+      infoText: dataUser.company ? dataUser.company : "não informado",
     },
     { id: "5", icon: `${repository}`, infoText: dataUser.public_repos },
-    { id: "6", icon: `${linkedin}`, infoText: "" },
   ];
+
   return (
     <ContainerCardBox>
       <CardProfile>
@@ -36,15 +41,23 @@ export const ContainerCard = ({ dataUser }) => {
       </CardProfile>
 
       <CardBio>
-        <p>{dataUser.bio}</p>
+        {!!dataUser.bio && <p>{dataUser.bio}</p>}
+        {!dataUser.bio && <NotBio>{"Bio não informada pelo usuário"}</NotBio>}
       </CardBio>
 
-      <CardRepo></CardRepo>
+      <CardAccessProfile>
+        <AccessGitHubWrapper dataUser={dataUser}/>
+      </CardAccessProfile>
 
       <CardInfo>
         {objInfo.map((info) => {
           return (
-            <IconTitle key={info.id} icon={info.icon} dataUser={dataUser} infoText={info.infoText}/>
+            <IconTitle
+              key={info.id}
+              icon={info.icon}
+              dataUser={dataUser}
+              infoText={info.infoText}
+            />
           );
         })}
       </CardInfo>

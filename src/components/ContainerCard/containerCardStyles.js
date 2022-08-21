@@ -13,7 +13,7 @@ export const ContainerCardBox = styled.div`
 
 const Card = styled.div`
   display: flex;
-  height: 10rem;
+  height: 30%;
   width: 70%;
   background-color: #161b22;
   border-radius: 10px;
@@ -49,19 +49,32 @@ export const CardProfile = styled(Card)`
 `;
 
 export const CardBio = styled(Card)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   p{
+    text-align: center;
     font-size: 1.6rem;
     color:#ffffff;
     line-height: 30px;
-    text-align: center;
     
   }
 
 `;
 
-export const CardRepo = styled(Card)``;
-export const CardInfo = styled(Card)`
+export const CardAccessProfile = styled(Card)`
   display: flex;
   justify-content: center;
+
+`;
+
+export const CardInfo = styled(Card)`
+  display: flex;
+  justify-content: space-around;
   
 `;
+
+export const NotBio = styled.p`
+  margin: auto;
+
+`

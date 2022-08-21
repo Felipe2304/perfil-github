@@ -13,18 +13,20 @@ function App() {
     const myProfile = fetch("https://api.github.com/users/Felipe2304");
     myProfile
       .then((response) => response.json())
-      .then((json) => setDataUser(json));
+      .then((json) => setDataUser(json))
+      .catch((error)=> setDataUser(error))
   }, []);
-  console.log(dataUser);
+
+  // const messageError = ['Ops!, ', 'ocorreu algum erro na busca']
+  // const messageWelcome = ['Seja bem vindo!, ', 'adicione o seu perfil do GitHub.']
 
   return (
     <ContainerApp>
       <Header />
       <SearchWrapper />
-
       <ContainerContent>
-        {/* <NotProfileBox infoTextStrong = {'Ops! '} infoText={'ocorreu algum erro na busca'}/> */}
-
+        {/* {!dataUser.length && <NotProfileBox infoTextStrong = {messageWelcome[0]} infoText={messageWelcome[1]}/>}
+        {!!dataUser.message && <NotProfileBox infoTextStrong = {messageError[0]} infoText={messageError[1]}/>} */}
         <ContainerCard dataUser = {dataUser} />
       </ContainerContent>
     </ContainerApp>
