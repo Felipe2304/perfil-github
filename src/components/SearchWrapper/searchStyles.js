@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Search = styled.div`
+export const Form = styled.form`
   width: 40rem;
   height: 5rem;
   display: flex;

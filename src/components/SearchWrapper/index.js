@@ -1,10 +1,26 @@
-import { Search, SearchInput , SearchButton} from "./searchStyles"
+import { useState } from "react";
+import { Form, SearchInput, SearchButton } from "./searchStyles";
 
-export const SearchWrapper = ()=>{
+export const SearchWrapper = () => {
+  const [valueInput, setValueInput] = useState("");
+
+  const getValueInput = (event) => {
+    setValueInput(event.target.value);
+  };
+
   return (
-    <Search>
-      <SearchInput placeholder="Digite o seu perfil"></SearchInput>
-      <SearchButton>{'Buscar perfil'}</SearchButton>
-    </Search>
-  )
-}
+    <Form onSubmit={(event) =>{
+      event.preventDefault()
+      console.log(valueInput)
+
+      setValueInput("")
+    }}>
+      <SearchInput
+        placeholder="Digite o seu perfil"
+        value={valueInput}
+        onChange={getValueInput}
+      />
+      <SearchButton>{"Buscar perfil"}</SearchButton>
+    </Form>
+  );
+};

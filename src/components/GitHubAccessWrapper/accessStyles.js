@@ -13,15 +13,20 @@ export const AccessGitHubProfile = styled.div`
 
 `
 
-export const ButtonAccess = styled.button`
+export const ButtonAccess = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 30rem;
   height: 4rem;
   color: #ffffff;
   background-color:#2ea043 ;
+  font-size: 1.4rem;
   border:none;
   border-radius: 5px;
   cursor:pointer;
   transition:200ms;
+  text-decoration: none;
 
   &:active{
     transform: scale(1.1);
