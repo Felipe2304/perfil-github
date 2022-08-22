@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Form, SearchInput, SearchButton } from "./searchStyles";
 
-export const SearchWrapper = () => {
+export const SearchWrapper = ({getUserProfile}) => {
   const [valueInput, setValueInput] = useState("");
 
   const getValueInput = (event) => {
@@ -11,7 +11,7 @@ export const SearchWrapper = () => {
   return (
     <Form onSubmit={(event) =>{
       event.preventDefault()
-      console.log(valueInput)
+      getUserProfile(valueInput)
 
       setValueInput("")
     }}>
