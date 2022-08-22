@@ -20,17 +20,17 @@ function App() {
     }
   }, [user]);
 
-  console.log(dataUser);
-
   const getUserProfile = (userProfile) => {
     setUser(userProfile);
   };
 
-  // const messageError = ['Ops! ', 'ocorreu algum erro na busca']
-  // const messageWelcome = [
-  //   "Seja bem vindo! ",
-  //   "adicione o seu perfil do GitHub.",
-  // ];
+  console.log(dataUser)
+
+  const messageError = ['Ops! ', 'ocorreu algum erro na busca']
+  const messageWelcome = [
+    "Seja bem vindo! ",
+    "adicione o seu perfil do GitHub.",
+  ];
 
   return (
     <ContainerApp>
@@ -38,21 +38,21 @@ function App() {
       <SearchWrapper getUserProfile={getUserProfile} />
 
       <ContainerContent>
-        {/* {!dataUser.length && (
-          <NotProfileBox
-            infoTextStrong={messageWelcome[0]}
-            infoText={messageWelcome[1]}
-          />
-        )} */}
+          {dataUser.length === 0 && (
+            <NotProfileBox
+              infoTextStrong={messageWelcome[0]}
+              infoText={messageWelcome[1]}
+            />
+          )}
 
-        {/* {!!dataUser.message && (
+        {dataUser.message && (
           <NotProfileBox
             infoTextStrong={messageError[0]}
             infoText={messageError[1]}
           />
-        )} */}
+        )}
 
-        <ContainerCard dataUser={dataUser} />
+        {dataUser.login && <ContainerCard dataUser={dataUser} />}
       </ContainerContent>
     </ContainerApp>
   );
