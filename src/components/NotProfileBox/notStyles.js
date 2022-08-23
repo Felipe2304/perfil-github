@@ -5,11 +5,12 @@ export const NotProfile = styled.div`
   width: 100%;
   display: flex;
   flex-direction:column ;
+  justify-content: center;
   align-items: center;
   padding: 2rem;
 
   img{
-    width: 20rem;
+    width: 30rem;
     margin-bottom:2rem;
   }
 
@@ -20,6 +21,41 @@ export const NotProfile = styled.div`
     & strong{
       font-size: 2.5rem;
       font-weight: 400;
+    }
+  }
+  
+  @media screen and (max-width:768px){
+    
+    img{
+      width: 25rem;
+      margin-bottom: 5rem;
+    }
+    
+    p{
+      text-align: center;
+      font-size: 2em;
+      
+      & strong{
+        display: block;
+        font-size: 2.5rem;
+      }
+    }
+  }
+
+  @media screen and (max-width:428px) {
+
+    img{
+      width: 20rem;
+    }
+
+
+    p{
+      font-size: 1.6rem;
+      text-align: center;
+
+      & strong{
+        font-size:2.5rem ;
+      }
     }
   }
 

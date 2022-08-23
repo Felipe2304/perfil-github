@@ -8,6 +8,11 @@ export const HeaderApp = styled.header`
   background-color:#161B22;
   padding: 0 5rem;
   margin-bottom: 4rem;
+
+
+  @media screen and (max-width: 428px){
+    padding: 0 2rem;
+  }
 `;
 
 export const LogoTitle = styled.div`
@@ -28,5 +33,15 @@ export const LogoTitle = styled.div`
     background-color: #ffffff;
     border-radius: 100%;
     padding: 0.5rem;
+  }
+
+  @media screen and (max-width: 428px){
+    h1{
+      font-size: 2.5rem;
+    }
+
+    img{
+      width: 6rem;
+    }
   }
 `;

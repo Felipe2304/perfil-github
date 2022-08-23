@@ -7,7 +7,13 @@ export const Form = styled.form`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 4rem;
-`;
+
+
+  @media screen and (max-width:768px ){
+    width: 90%;
+  }
+  
+  `;
 
 export const SearchInput = styled.input`
   height: 100%;
@@ -16,7 +22,15 @@ export const SearchInput = styled.input`
   padding-left: 1rem;
   border-radius: 5px;
   border: none;
-`;
+
+
+  @media screen and (max-width:768px ){
+    font-size: 1.8rem;
+  }
+  @media screen and (max-width:428px ){
+    font-size: 1.6rem;
+  }
+  `;
 
 export const SearchButton = styled.button`
   height: 100%;
@@ -28,7 +42,14 @@ export const SearchButton = styled.button`
   border-radius: 5px;
   cursor: pointer;
   transition: 200ms;
-
+  
+  @media screen and (max-width:768px ){
+    font-size: 1.4rem;
+  }
+  @media screen and (max-width:428px ){
+    font-size: 1.4rem;
+  }
+  
   &:active {
     transform: scale(1.1);
   }
