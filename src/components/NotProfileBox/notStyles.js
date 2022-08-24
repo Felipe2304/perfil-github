@@ -10,7 +10,7 @@ export const NotProfile = styled.div`
   padding: 2rem;
 
   img{
-    width: 30rem;
+    width: 20rem;
     margin-bottom:2rem;
   }
 
@@ -23,8 +23,16 @@ export const NotProfile = styled.div`
       font-weight: 400;
     }
   }
+
+  @media screen and (max-width:1024px){
+    img{
+      width: 30rem;
+    }
+  }
   
   @media screen and (max-width:768px){
+
+    height:72.6vh;
     
     img{
       width: 25rem;
@@ -39,6 +47,11 @@ export const NotProfile = styled.div`
         display: block;
         font-size: 2.5rem;
       }
+    }
+    
+    @media screen and (max-width:428px){
+      height:66.7vh;
+      
     }
   }
 

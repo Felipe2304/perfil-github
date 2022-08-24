@@ -11,13 +11,17 @@ export const AccessGitHubProfile = styled.div`
     width: 9rem;
   }
 
+  @media screen and (max-width:1024px){
+    width: 100%;
+  }
+
 `
 
 export const ButtonAccess = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30rem;
+  width:70%;
   height: 4rem;
   color: #ffffff;
   background-color:#2ea043 ;
@@ -30,6 +34,15 @@ export const ButtonAccess = styled.a`
 
   &:active{
     transform: scale(1.1);
+  }
+
+  @media screen and (max-width:768px) {
+    width: 65%;
+    text-align:center;
+  }
+
+  @media screen and (max-width:428px){
+    font-size: 1.1rem;
   }
 
 `

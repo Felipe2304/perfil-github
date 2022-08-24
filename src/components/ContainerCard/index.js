@@ -8,7 +8,7 @@ import {
 } from "./containerCardStyles";
 import { AccessGitHubWrapper } from "../GitHubAccessWrapper";
 
-import { IconTitle } from "../shared/IconTitle";
+import { IconTitle } from "../../components/IconTitle";
 import location from "../../assets/location.svg";
 import followers from "../../assets/followers.svg";
 import following from "../../assets/following.svg";
@@ -35,18 +35,20 @@ export const ContainerCard = ({ dataUser }) => {
   return (
     <ContainerCardBox>
       <CardProfile>
-        <img src={`${dataUser.avatar_url}`}></img>
-        <h4>{dataUser.name}</h4>
-        <span>{dataUser.login}</span>
+          <img src={`${dataUser.avatar_url}`}></img>
+        <div>
+          <h4>{dataUser.name}</h4>
+          <span>{dataUser.login}</span>
+        </div>
       </CardProfile>
 
       <CardBio>
-        {!!dataUser.bio && <p>{dataUser.bio}</p>}
+        {!!dataUser.bio && <p>{dataUser.bio}</p> }
         {!dataUser.bio && <NotBio>{"Bio não informada pelo usuário"}</NotBio>}
       </CardBio>
 
       <CardAccessProfile>
-        <AccessGitHubWrapper dataUser={dataUser}/>
+        <AccessGitHubWrapper dataUser={dataUser} />
       </CardAccessProfile>
 
       <CardInfo>

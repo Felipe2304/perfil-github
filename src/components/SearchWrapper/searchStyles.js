@@ -25,10 +25,10 @@ export const SearchInput = styled.input`
 
 
   @media screen and (max-width:768px ){
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
   @media screen and (max-width:428px ){
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
   `;
 
