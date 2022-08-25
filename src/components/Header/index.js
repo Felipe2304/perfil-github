@@ -6,7 +6,7 @@ export const Header = () => {
     <HeaderApp>
       <LogoTitle>
         <h1>gitHub profile</h1>
-        <img src={Logo}></img>
+        <img src={Logo} alt={"logo gitHub"}></img>
       </LogoTitle>
     </HeaderApp>
   );

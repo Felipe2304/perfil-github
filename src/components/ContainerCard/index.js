@@ -35,7 +35,10 @@ export const ContainerCard = ({ dataUser }) => {
   return (
     <ContainerCardBox>
       <CardProfile>
-          <img src={`${dataUser.avatar_url}`}></img>
+        <img
+          src={`${dataUser.avatar_url}`}
+          alt={`foto de perfil do(a) ${dataUser.name}`} 
+        ></img>
         <div>
           <h4>{dataUser.name}</h4>
           <span>{dataUser.login}</span>
@@ -43,7 +46,7 @@ export const ContainerCard = ({ dataUser }) => {
       </CardProfile>
 
       <CardBio>
-        {!!dataUser.bio && <p>{dataUser.bio}</p> }
+        {!!dataUser.bio && <p>{dataUser.bio}</p>}
         {!dataUser.bio && <NotBio>{"Bio não informada pelo usuário"}</NotBio>}
       </CardBio>
 
