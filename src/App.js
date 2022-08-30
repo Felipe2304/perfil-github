@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./App.css";
+import { GlobalStyle } from "./global";
 import { Header } from "./components/Header";
 import { ContainerApp, ContainerContent } from "./styles";
 import { SearchWrapper } from "./components/SearchWrapper/index";
@@ -24,8 +24,6 @@ function App() {
     setUser(userProfile);
   };
 
-  console.log(dataUser)
-
   const messageError = ['Ops! ', 'ocorreu algum erro na busca']
   const messageWelcome = [
     "Seja bem vindo! ",
@@ -34,16 +32,17 @@ function App() {
 
   return (
     <ContainerApp>
+      <GlobalStyle />
       <Header />
       <SearchWrapper getUserProfile={getUserProfile} />
 
       <ContainerContent>
-          {dataUser.length === 0 && (
-            <NotProfileBox
-              infoTextStrong={messageWelcome[0]}
-              infoText={messageWelcome[1]}
-            />
-          )}
+        {dataUser.length === 0 && (
+          <NotProfileBox
+            infoTextStrong={messageWelcome[0]}
+            infoText={messageWelcome[1]}
+          />
+        )}
 
         {dataUser.message && (
           <NotProfileBox
